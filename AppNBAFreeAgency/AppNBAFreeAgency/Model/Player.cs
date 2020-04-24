@@ -4,7 +4,7 @@ using System.Text;
 
 namespace AppNBAFreeAgency.Model
 {
-    public class Players
+    public class Player
     {
         public string Name { get; set; }
         public short Age { get; set; }
