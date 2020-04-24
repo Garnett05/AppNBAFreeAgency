@@ -4,7 +4,8 @@ using System.Text;
 
 namespace AppNBAFreeAgency.Database
 {
-    class IDatabasePath
+    interface IDatabasePath
     {
+        string GetPath(string DatabaseName);
     }
 }

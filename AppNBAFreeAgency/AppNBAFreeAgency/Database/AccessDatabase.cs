@@ -10,7 +10,7 @@ namespace AppNBAFreeAgency.Database
     public class AccessDatabase
     {
         private SQLiteConnection _conection;
-
+                 
         public AccessDatabase()
         {
             var dep = DependencyService.Get<IDatabasePath>();
