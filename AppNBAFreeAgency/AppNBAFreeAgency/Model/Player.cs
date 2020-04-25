@@ -14,6 +14,7 @@ namespace AppNBAFreeAgency.Model
         public short Age { get; set; }
         public string BirthCity { get; set; }
         public double Salary { get; set; }
+        public string PreviousTeam { get; set; }
         public string Description { get; set; }
         public bool ThreePointShooter { get; set; }
         public string PhoneNumber { get; set; }

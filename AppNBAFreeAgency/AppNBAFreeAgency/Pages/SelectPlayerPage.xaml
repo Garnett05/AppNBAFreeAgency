@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+             mc:Ignorable="d"
+             x:Class="AppNBAFreeAgency.Pages.SelectPlayerPage">
+    <ContentPage.Content>
+        <StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Free Agency" FontSize="24" />
+                <Label Text="Find your player here" FontSize="12" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal">
+                <Button Text="Add" Clicked="GoRegisterPage" />
+                <Button Text="Players" Clicked="GoPlayerInformation" />
+            </StackLayout>
+            <ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <Grid>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="100" />
+                            </Grid.ColumnDefinitions>
+                            <Label Text="{Binding Name}" Grid.Column="0" FontAttributes="Bold" />
+                            <Label Text="{Binding PreviousTeam}" Grid.Column="0" />
+                            <Label Text="{Binding BirthCity}" Grid.Column="0" />
+                            <Label Text="+Detalhe" >
+                                <Label.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="MoreDetails" CommandParameter="{Binding .}" />
+                                </Label.GestureRecognizers>
+                            </Label>                                   
+                        </Grid>                        
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
