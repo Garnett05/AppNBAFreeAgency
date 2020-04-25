@@ -15,6 +15,8 @@
                 <Button Text="Add" Clicked="GoRegisterPage" />
                 <Button Text="Players" Clicked="GoPlayerInformation" />
             </StackLayout>
+            <Entry Placeholder="Search" />
+            <Label Text="3 players found" />
             <ListView>
                 <ListView.ItemTemplate>
                     <DataTemplate>
@@ -26,7 +28,7 @@
                             <Label Text="{Binding Name}" Grid.Column="0" FontAttributes="Bold" />
                             <Label Text="{Binding PreviousTeam}" Grid.Column="0" />
                             <Label Text="{Binding BirthCity}" Grid.Column="0" />
-                            <Label Text="+Detalhe" >
+                            <Label Text="+Detalhe" Grid.Column="1" >
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="MoreDetails" CommandParameter="{Binding .}" />
                                 </Label.GestureRecognizers>
