@@ -6,6 +6,6 @@
              mc:Ignorable="d"
              x:Class="AppNBAFreeAgency.App">
     <Application.Resources>
-
+        
     </Application.Resources>
 </Application>
