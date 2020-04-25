@@ -4,6 +4,7 @@ using System.Text;
 using SQLite;
 using AppNBAFreeAgency.Model;
 using Xamarin.Forms;
+using System.Linq;
 
 namespace AppNBAFreeAgency.Database
 {
@@ -16,26 +17,31 @@ namespace AppNBAFreeAgency.Database
             var dep = DependencyService.Get<IDatabasePath>();
             string path = dep.GetPath("database.sqlite");
             _conection = new SQLiteConnection(path);
+            _conection.CreateTable<Player>();
         }
         public void EnterPlayer(Player player)
         {
-
+            _conection.Insert(player);
         }
         public void DeletePlayer(Player player)
         {
-
+            _conection.Delete(player);
         }
-        public void Update(Player player)
+        public void UpdateList(Player player)
         {
-
+            _conection.Update(player);
+        }
+        public List<Player> SearchPlayer(string name)
+        {
+            return _conection.Table<Player>().Where(x => x.Name == name).ToList();
         }
         public Player GetPlayer(int id)
         {
-            return null;
+            return _conection.Table<Player>().Where(x => x.Id == id).FirstOrDefault();
         }
-        public List<Player> SelectPlayer()
+        public List<Player> SelectAllPlayers()
         {
-            return null;
+            return _conection.Table<Player>().ToList();
         }
     }
 }

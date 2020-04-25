@@ -1,11 +1,15 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace AppNBAFreeAgency.Model
 {
+    [Table("Player")]
     public class Player
     {
+        [PrimaryKey, AutoIncrement]
+        public int Id { get; set; }
         public string Name { get; set; }
         public short Age { get; set; }
         public string BirthCity { get; set; }
