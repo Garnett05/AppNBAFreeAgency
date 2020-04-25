@@ -7,9 +7,15 @@
              x:Class="AppNBAFreeAgency.Pages.PlayerInformation">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Label Text="{Binding Name}" />
+            <Label Text="{Binding Age}" />
+            <Label Text="{Binding BirthCity}" />
+            <Label Text="{Binding Salary}" />
+            <Label Text="{Binding PreviousTeam}" />
+            <Label Text="{Binding Description}" />
+            <Label Text="{Binding ThreePointShooter}" />
+            <Label Text="{Binding PhoneNumber}" />
+            <Label Text="{Binding Email}" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
