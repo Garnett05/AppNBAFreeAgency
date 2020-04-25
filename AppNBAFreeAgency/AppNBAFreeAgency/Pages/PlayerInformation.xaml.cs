@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AppNBAFreeAgency.Model;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,9 +13,10 @@ namespace AppNBAFreeAgency.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class PlayerInformation : ContentPage
     {
-        public PlayerInformation()
+        public PlayerInformation(Player player)
         {
             InitializeComponent();
+            DisplayAlert("MSG", player.Name, "Ok");
         }
     }
 }

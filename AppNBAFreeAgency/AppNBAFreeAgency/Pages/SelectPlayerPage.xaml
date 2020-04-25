@@ -32,7 +32,7 @@
                                 <Label.GestureRecognizers>
                                     <TapGestureRecognizer Tapped="MoreDetails" CommandParameter="{Binding .}" />
                                 </Label.GestureRecognizers>
-                            </Label>                                   
+                            </Label>
                         </Grid>                        
                     </DataTemplate>
                 </ListView.ItemTemplate>
