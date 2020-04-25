@@ -7,9 +7,23 @@
              x:Class="AppNBAFreeAgency.Pages.RegisterPlayer">
     <ContentPage.Content>
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+            <Entry Placeholder="Player" />
+            <Entry Placeholder="Last team" />
+            <Entry Placeholder="Age" />
+            <Entry Placeholder="City Birth" />
+            <Entry Placeholder="Salary pretended" />
+            <Label Text="Skills description" />
+            <Editor HeightRequest="200" />            
+            <StackLayout Orientation="Horizontal">
+                <Label Text="Shoot 3's?" />
+                <Label Text="Yes" />
+                <Switch />
+                <Label Text="No" />
+            </StackLayout>
+            <Entry Placeholder="Phone number" />
+            <Entry Placeholder="Email" />
+            <Button Text="Save" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
