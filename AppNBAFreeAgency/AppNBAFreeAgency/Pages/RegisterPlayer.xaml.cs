@@ -14,9 +14,12 @@ namespace AppNBAFreeAgency.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPlayer : ContentPage
     {
-        public RegisterPlayer()
+        public RegisterPlayer(Player player = null)
         {
             InitializeComponent();
+            if(player != null){
+                //edit
+            }
         }
         public void SavePlayer (object sender, EventArgs args)
         {

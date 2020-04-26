@@ -11,32 +11,38 @@
                 <Label Text="Free Agency" FontSize="24" />
                 <Label Text="Find your player here" FontSize="12" />
             </StackLayout>
-            
+
             <Entry Placeholder="Search" />
-            <Label Text="3 players found" />
-            <ListView>
+            <Label x:Name="lblCountPlayers" />
+            <ListView x:Name="listPlayers">
                 <ListView.ItemTemplate>
                     <DataTemplate>
-                        <Grid>
-                            <Grid.ColumnDefinitions>
-                                <ColumnDefinition Width="*" />
-                                <ColumnDefinition Width="100" />
-                            </Grid.ColumnDefinitions>
-                            <Label Text="{Binding Name}" Grid.Column="0" FontAttributes="Bold" />
-                            <Label Text="{Binding PreviousTeam}" Grid.Column="0" />
-                            <Label Text="{Binding BirthCity}" Grid.Column="0" />
-                            <Label Text="Edit" Grid.Column="1" >
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="EditPlayer" CommandParameter="{Binding .}" />
-                                </Label.GestureRecognizers>
-                            </Label>
-                            <Label Text="|" Grid.Column="1" />
-                            <Label Text="Delete" Grid.Column="1" >
-                                <Label.GestureRecognizers>
-                                    <TapGestureRecognizer Tapped="DeletePlayer" CommandParameter="{Binding .}" />
-                                </Label.GestureRecognizers>
-                            </Label>
-                        </Grid>
+                        <ViewCell>
+                            <Grid>
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="*" />
+                                    <ColumnDefinition Width="100" />
+                                </Grid.ColumnDefinitions>
+                                <StackLayout Grid.Column="0">
+                                    <Label Text="{Binding Name}" FontAttributes="Bold" />
+                                    <Label Text="{Binding PreviousTeam}" />
+                                    <Label Text="{Binding BirthCity}"  />
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" Grid.Column="1" >
+                                    <Label Text="Edit" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="EditPlayer" CommandParameter="{Binding .}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                    <Label Text="|" />
+                                    <Label Text="Delete" >
+                                        <Label.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="DeletePlayer" CommandParameter="{Binding .}" />
+                                        </Label.GestureRecognizers>
+                                    </Label>
+                                </StackLayout>
+                            </Grid>
+                        </ViewCell>
                     </DataTemplate>
                 </ListView.ItemTemplate>
             </ListView>
