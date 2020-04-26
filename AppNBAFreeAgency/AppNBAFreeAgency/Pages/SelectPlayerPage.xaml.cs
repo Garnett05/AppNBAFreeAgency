@@ -16,15 +16,15 @@ namespace AppNBAFreeAgency.Pages
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class SelectPlayerPage : ContentPage
     {
+        List<Player> list { get; set; }
         public SelectPlayerPage()
         {
             InitializeComponent();
 
             AccessDatabase db = new AccessDatabase();
             listPlayers.ItemsSource = db.SelectAllPlayers();
-            var varvar = db.SearchPlayer("Kahwi Leonard");            
-            var count = db.SelectAllPlayers();
-            lblCountPlayers.Text = count.Count.ToString();
+            list = db.SelectAllPlayers();
+            lblCountPlayers.Text = list.Count.ToString();
 
         }
         public void GoRegisterPage (object sender, EventArgs args)
@@ -46,6 +46,10 @@ namespace AppNBAFreeAgency.Pages
             //Navigation.PushAsync(new PlayerInformation(player));
             var nextPage = new PlayerInformation(player);
             PopupNavigation.Instance.PushAsync(nextPage);
+        }
+        public void SearchPlayer (object sender, TextChangedEventArgs args)
+        {            
+            listPlayers.ItemsSource = list.Where(x => x.Name.Contains(args.NewTextValue)).ToList();
         }
     }
 }

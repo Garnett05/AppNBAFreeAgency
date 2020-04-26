@@ -15,7 +15,7 @@
                 <Button Text="Add" Clicked="GoRegisterPage" />
                 <Button Text="Players" Clicked="GoPlayerInformation" />
             </StackLayout>
-            <Entry Placeholder="Search" />
+            <Entry Placeholder="Search" TextChanged="SearchPlayer" />
             <Label x:Name="lblCountPlayers" />
             <ListView x:Name="listPlayers" HasUnevenRows="True" >
                 <ListView.ItemTemplate>
