@@ -1,4 +1,5 @@
 ﻿using AppNBAFreeAgency.Model;
+using Rg.Plugins.Popup.Pages;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,7 +12,7 @@ using Xamarin.Forms.Xaml;
 namespace AppNBAFreeAgency.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class PlayerInformation : ContentPage
+    public partial class PlayerInformation : PopupPage
     {
         public PlayerInformation(Player player)
         {

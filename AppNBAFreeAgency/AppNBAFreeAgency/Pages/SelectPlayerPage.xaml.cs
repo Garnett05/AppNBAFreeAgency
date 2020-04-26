@@ -8,6 +8,8 @@ using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using AppNBAFreeAgency.Database;
+using Rg.Plugins.Popup.Services;
+using Rg.Plugins.Popup.Pages;
 
 namespace AppNBAFreeAgency.Pages
 {
@@ -41,7 +43,9 @@ namespace AppNBAFreeAgency.Pages
             var player = tapGest.CommandParameter as Player;
 
             //var player = ((TapGestureRecognizer)lblDetail.GestureRecognizers[0]).CommandParameter as Player; //Poderia ter sido feito assim também
-            Navigation.PushAsync(new PlayerInformation(player));
+            //Navigation.PushAsync(new PlayerInformation(player));
+            var nextPage = new PlayerInformation(player);
+            PopupNavigation.Instance.PushAsync(nextPage);
         }
     }
 }
