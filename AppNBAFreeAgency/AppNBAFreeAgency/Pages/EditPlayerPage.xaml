@@ -4,7 +4,7 @@
              xmlns:d="http://xamarin.com/schemas/2014/forms/design"
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
-             x:Class="AppNBAFreeAgency.Pages.RegisterPlayer">
+             x:Class="AppNBAFreeAgency.Pages.EditPlayerPage">
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
@@ -23,7 +23,7 @@
                 </StackLayout>
                 <Entry Placeholder="Phone number" x:Name="phone" />
                 <Entry Placeholder="Email" x:Name="email" />
-                <Button Text="Save" Clicked="SavePlayer" />
+                <Button Text="Save" Clicked="UpdatePlayer" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

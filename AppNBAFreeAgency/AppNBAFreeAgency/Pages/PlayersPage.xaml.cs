@@ -36,7 +36,7 @@ namespace AppNBAFreeAgency.Pages
             var player = tapGest.CommandParameter as Player;
 
             //var player = ((TapGestureRecognizer)lblDetail.GestureRecognizers[0]).CommandParameter as Player; //Poderia ter sido feito assim também
-            Navigation.PushAsync(new RegisterPlayer(player));
+            Navigation.PushAsync(new EditPlayerPage(player));
         }
         public void DeletePlayer (object sender, EventArgs args)
         {
