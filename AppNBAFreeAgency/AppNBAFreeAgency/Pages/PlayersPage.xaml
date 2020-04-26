@@ -11,10 +11,7 @@
                 <Label Text="Free Agency" FontSize="24" />
                 <Label Text="Find your player here" FontSize="12" />
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Add" Clicked="GoRegisterPage" />
-                <Button Text="Players" Clicked="GoPlayerInformation" />
-            </StackLayout>
+            
             <Entry Placeholder="Search" />
             <Label Text="3 players found" />
             <ListView>

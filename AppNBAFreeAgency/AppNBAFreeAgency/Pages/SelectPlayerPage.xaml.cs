@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
+using AppNBAFreeAgency.Database;
 
 namespace AppNBAFreeAgency.Pages
 {
@@ -16,6 +17,13 @@ namespace AppNBAFreeAgency.Pages
         public SelectPlayerPage()
         {
             InitializeComponent();
+
+            AccessDatabase db = new AccessDatabase();
+            listPlayers.ItemsSource = db.SelectAllPlayers();
+            var varvar = db.SearchPlayer("Kahwi Leonard");            
+            var count = db.SelectAllPlayers();
+            lblCountPlayers.Text = count.Count.ToString();
+
         }
         public void GoRegisterPage (object sender, EventArgs args)
         {
@@ -25,7 +33,7 @@ namespace AppNBAFreeAgency.Pages
         {
             Navigation.PushAsync(new PlayersPage());
         }
-        public void MoreDetails (object sender, TappedEventArgs args)
+        public void MoreDetails (object sender, EventArgs args)
         {
             // label --> GestureRecognized --> CommandParameter
             Label lblDetail = (Label)sender;

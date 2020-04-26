@@ -16,7 +16,9 @@ namespace AppNBAFreeAgency.Pages
         public PlayerInformation(Player player)
         {
             InitializeComponent();
-            DisplayAlert("MSG", player.Name, "Ok");
+
+            BindingContext = player;
+            shootThrees.Text = (player.ThreePointShooter == true) ? "Shoot Threes? No" : "Shoot Threes? Yes";
         }
     }
 }

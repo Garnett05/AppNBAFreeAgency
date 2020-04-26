@@ -16,5 +16,14 @@ namespace AppNBAFreeAgency.Pages
         {
             InitializeComponent();
         }
+
+        public void EditPlayer (object sender, EventArgs args)
+        {
+            
+        }
+        public void DeletePlayer (object sender, EventArgs args)
+        {
+
+        }
     }
 }
