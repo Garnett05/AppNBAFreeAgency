@@ -6,41 +6,57 @@
              mc:Ignorable="d"
              x:Class="AppNBAFreeAgency.Pages.SelectPlayerPage">
     <ContentPage.Content>
-        <StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Free Agency" FontSize="24" />
-                <Label Text="Find your player here" FontSize="12" />
+        <ScrollView>
+            <StackLayout Margin="8">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Free Agency" FontSize="24" VerticalOptions="Center" />
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand">
+                        <Label Text="Find your player here" FontSize="12" VerticalOptions="Center" HorizontalOptions="EndAndExpand" />
+                        <Image Source="larryLegendLogo.png" Aspect="AspectFit" HeightRequest="70" HorizontalOptions="EndAndExpand" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center">
+                    <Button Text="Add" Clicked="GoRegisterPage" />
+                    <Button Text="Players" Clicked="GoPlayerInformation" />
+                </StackLayout>
+                <Entry Placeholder="Search" TextChanged="SearchPlayer" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Number of players: " />
+                    <Label x:Name="lblCountPlayers" />
+                </StackLayout>
+                <ListView x:Name="listPlayers" HasUnevenRows="True" >
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <ViewCell >
+                                <Frame CornerRadius="3" BorderColor="Black" Margin="0, 4, 0, 4" >
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="100" />
+                                        </Grid.ColumnDefinitions>
+                                        <StackLayout Grid.Column="0" HorizontalOptions="StartAndExpand" >
+                                            <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="16" />
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="Previous team: " />
+                                                <Label Text="{Binding PreviousTeam}" />
+                                            </StackLayout>
+                                            <StackLayout Orientation="Horizontal">
+                                                <Label Text="College: " />
+                                                <Label Text="{Binding College}" />
+                                            </StackLayout>
+                                        </StackLayout>
+                                        <Label Text="More Details" Grid.Column="1" FontAttributes="Bold" VerticalOptions="Center" HorizontalOptions="EndAndExpand" >
+                                            <Label.GestureRecognizers>
+                                                <TapGestureRecognizer Tapped="MoreDetails" CommandParameter="{Binding .}" />
+                                            </Label.GestureRecognizers>
+                                        </Label>
+                                    </Grid>
+                                </Frame>
+                            </ViewCell>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
             </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Button Text="Add" Clicked="GoRegisterPage" />
-                <Button Text="Players" Clicked="GoPlayerInformation" />
-            </StackLayout>
-            <Entry Placeholder="Search" TextChanged="SearchPlayer" />
-            <Label x:Name="lblCountPlayers" />
-            <ListView x:Name="listPlayers" HasUnevenRows="True" >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <Grid >
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="*" />
-                                    <ColumnDefinition Width="100" />
-                                </Grid.ColumnDefinitions>                                
-                                <StackLayout Grid.Column="0" >
-                                <Label Text="{Binding Name}" FontAttributes="Bold" />
-                                <Label Text="{Binding PreviousTeam}" />
-                                <Label Text="{Binding BirthCity}" />
-                                </StackLayout>
-                                <Label Text="More Details" Grid.Column="1" >
-                                    <Label.GestureRecognizers>
-                                        <TapGestureRecognizer Tapped="MoreDetails" CommandParameter="{Binding .}" />
-                                    </Label.GestureRecognizers>
-                                </Label>
-                            </Grid>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
-        </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

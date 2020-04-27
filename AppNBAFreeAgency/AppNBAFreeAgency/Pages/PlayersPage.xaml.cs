@@ -38,16 +38,32 @@ namespace AppNBAFreeAgency.Pages
             //var player = ((TapGestureRecognizer)lblDetail.GestureRecognizers[0]).CommandParameter as Player; //Poderia ter sido feito assim também
             Navigation.PushAsync(new EditPlayerPage(player));
         }
-        public void DeletePlayer (object sender, EventArgs args)
+        public async void DeletePlayer (object sender, EventArgs args)
         {
-            // label --> GestureRecognized --> CommandParameter
-            Label lblDelete = (Label)sender;
-            TapGestureRecognizer tapGest = (TapGestureRecognizer)lblDelete.GestureRecognizers[0];
-            var player = tapGest.CommandParameter as Player;
+            var awnser = await DisplayAlert("Delete player", "Are you sure you do want delete this player?", "Yes", "No");
+            if (awnser == false)
+            {
+                await DisplayAlert("Delete action", "Delete canceled", "Ok");
+            }
+            else
+            {
+                Label lblDelete = (Label)sender;
+                TapGestureRecognizer tapGest = (TapGestureRecognizer)lblDelete.GestureRecognizers[0];
+                var player = tapGest.CommandParameter as Player;
 
-            AccessDatabase db = new AccessDatabase();
-            db.DeletePlayer(player);
-            UpdateScreen();
+                AccessDatabase db = new AccessDatabase();
+                db.DeletePlayer(player);                
+                UpdateScreen();
+                btnHome.IsVisible = true;
+            }            
+        }
+        public void SearchPlayer(object sender, TextChangedEventArgs args)
+        {
+            listPlayers.ItemsSource = list.Where(x => x.Name.Contains(args.NewTextValue)).ToList();
+        }
+        public void GoSelectPlayerPage (object sender, EventArgs args)
+        {
+            App.Current.MainPage = new NavigationPage(new SelectPlayerPage());
         }
     }
 }

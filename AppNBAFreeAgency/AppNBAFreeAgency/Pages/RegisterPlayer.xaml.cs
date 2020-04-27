@@ -13,7 +13,7 @@ namespace AppNBAFreeAgency.Pages
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class RegisterPlayer : ContentPage
-    {        
+    {
         public RegisterPlayer(Player player = null)
         {
             InitializeComponent();            
@@ -25,7 +25,7 @@ namespace AppNBAFreeAgency.Pages
             player.Name = playerName.Text;
             player.PreviousTeam = lastTeam.Text;
             player.Age = short.Parse(age.Text);
-            player.BirthCity = cityBirth.Text;
+            player.College = cityBirth.Text;
             player.Salary = double.Parse(salary.Text);
             player.Description = description.Text;
             player.ThreePointShooter = shootThrees.IsToggled;

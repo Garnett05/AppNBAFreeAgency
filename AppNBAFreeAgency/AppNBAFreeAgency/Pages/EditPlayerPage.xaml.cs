@@ -24,7 +24,7 @@ namespace AppNBAFreeAgency.Pages
             playerName.Text = player.Name;
             lastTeam.Text = player.PreviousTeam;
             age.Text = player.Age.ToString();
-            cityBirth.Text = player.BirthCity;
+            cityBirth.Text = player.College;
             salary.Text = player.Salary.ToString();
             description.Text = player.Description;
             shootThrees.IsToggled = player.ThreePointShooter;
@@ -36,7 +36,7 @@ namespace AppNBAFreeAgency.Pages
             player.Name = playerName.Text;
             player.PreviousTeam = lastTeam.Text;
             player.Age = short.Parse(age.Text);
-            player.BirthCity = cityBirth.Text;
+            player.College = cityBirth.Text;
             player.Salary = double.Parse(salary.Text);
             player.Description = description.Text;
             player.ThreePointShooter = shootThrees.IsToggled;

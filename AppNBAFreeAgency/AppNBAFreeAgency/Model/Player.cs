@@ -12,7 +12,7 @@ namespace AppNBAFreeAgency.Model
         public int Id { get; set; }
         public string Name { get; set; }
         public short Age { get; set; }
-        public string BirthCity { get; set; }
+        public string College { get; set; }
         public double Salary { get; set; }
         public string PreviousTeam { get; set; }
         public string Description { get; set; }

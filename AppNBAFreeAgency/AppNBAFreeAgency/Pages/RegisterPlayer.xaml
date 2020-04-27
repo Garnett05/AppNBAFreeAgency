@@ -5,24 +5,51 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
              mc:Ignorable="d"
              x:Class="AppNBAFreeAgency.Pages.RegisterPlayer">
-    <ContentPage.Content>
-        <ScrollView>
-            <StackLayout>
-                <Entry Placeholder="Player" x:Name="playerName" />
-                <Entry Placeholder="Last team" x:Name="lastTeam" />
-                <Entry Placeholder="Age" x:Name="age" />
-                <Entry Placeholder="City Birth" x:Name="cityBirth" />
-                <Entry Placeholder="Salary pretended" x:Name="salary" />
-                <Label Text="Skills description" x:Name="description" />
-                <Editor HeightRequest="200" />
+    <ContentPage.Content>                
+        <ScrollView>            
+            <StackLayout Padding="8" >
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Register the player here" TextColor="Red" FontSize="18" FontAttributes="Bold" VerticalOptions="Center" />
+                    <Image Source="larryLegendLogo.png" Aspect="AspectFit" HeightRequest="70" HorizontalOptions="EndAndExpand" />
+                </StackLayout>                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Name: " VerticalOptions="Center" />
+                    <Entry x:Name="playerName" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Last Team: " VerticalOptions="Center" />
+                    <Entry x:Name="lastTeam" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Age: " VerticalOptions="Center" />
+                    <Entry x:Name="age" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="College: " VerticalOptions="Center" />
+                    <Entry x:Name="cityBirth" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Salary pretended: " VerticalOptions="Center" />
+                    <Entry x:Name="salary" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Vertical">
+                    <Label Text="Aditional information: " VerticalOptions="Start" />
+                    <Editor HeightRequest="200" x:Name="description" HorizontalOptions="FillAndExpand" />
+                </StackLayout>                
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Shoot 3's?" />
                     <Label Text="Yes" />
                     <Switch x:Name="shootThrees" />
                     <Label Text="No" />
                 </StackLayout>
-                <Entry Placeholder="Phone number" x:Name="phone" />
-                <Entry Placeholder="Email" x:Name="email" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Phone number: " VerticalOptions="Center" />
+                    <Entry x:Name="phone" HorizontalOptions="FillAndExpand" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="E-mail: " VerticalOptions="Center" />
+                    <Entry x:Name="email" HorizontalOptions="FillAndExpand" />
+                </StackLayout>                
                 <Button Text="Save" Clicked="SavePlayer" />
             </StackLayout>
         </ScrollView>

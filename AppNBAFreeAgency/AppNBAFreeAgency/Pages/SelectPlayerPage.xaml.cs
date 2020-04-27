@@ -20,6 +20,7 @@ namespace AppNBAFreeAgency.Pages
         public SelectPlayerPage()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false); // Hide title bar
 
             AccessDatabase db = new AccessDatabase();
             listPlayers.ItemsSource = db.SelectAllPlayers();

@@ -15,44 +15,44 @@
             ScaleIn="1"
             ScaleOut="0.7"
             DurationIn="700"
-            EasingIn="BounceOut" />
+             />
     </pages:PopupPage.Animation>
 
     <Frame CornerRadius="8" BorderColor="Black" HorizontalOptions="Center" VerticalOptions="Center" BackgroundColor="LightGreen">
-    <StackLayout BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="Center"
+        <StackLayout BackgroundColor="LightGreen" HorizontalOptions="Center" VerticalOptions="Center"
                  Padding="10, 5" Spacing="3">
-        <StackLayout Margin="10">
-            <Label Text="{Binding Name}" FontSize="18" HorizontalOptions="Center" FontAttributes="Bold" />
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Age: " FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding Age}" FontSize="14" HorizontalOptions="Center" TextColor="Gray" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Birth City: " FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding BirthCity}" FontSize="14" TextColor="Gray" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Salary pretended: R$" FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding Salary}" FontSize="14" TextColor="Gray" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal" >
-                <Label Text="Previous team: " FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding PreviousTeam}" FontSize="14" TextColor="Gray" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="About: " FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />
-            </StackLayout>
-            <Label x:Name="shootThrees" FontSize="14" TextColor="Gray" />
-            <StackLayout Orientation="Horizontal">
-                <Label Text="Phone Number: " FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding PhoneNumber}" FontSize="14" TextColor="Gray" />
-            </StackLayout>
-            <StackLayout Orientation="Horizontal">
-                <Label Text="E-mail: " FontSize="14" TextColor="Gray" />
-                <Label Text="{Binding Email}" FontSize="14" TextColor="Gray" />
+            <StackLayout Margin="10">
+                <Label Text="{Binding Name}" FontSize="22" HorizontalOptions="Center" FontAttributes="Bold" TextColor="Black" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Age: " FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding Age}" FontSize="14" HorizontalOptions="Center" TextColor="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="College: " FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding College}" FontSize="14" TextColor="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Salary pretended: R$" FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding Salary}" FontSize="14" TextColor="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal" >
+                    <Label Text="Previous team: " FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding PreviousTeam}" FontSize="14" TextColor="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="About: " FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />
+                </StackLayout>
+                <Label x:Name="shootThrees" FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Phone Number: " FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding PhoneNumber}" FontSize="14" TextColor="Gray" />
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="E-mail: " FontSize="14" TextColor="Gray" FontAttributes="Bold" />
+                    <Label Text="{Binding Email}" FontSize="14" TextColor="Gray" />
+                </StackLayout>
             </StackLayout>
         </StackLayout>
-    </StackLayout>
     </Frame>
 </pages:PopupPage>
